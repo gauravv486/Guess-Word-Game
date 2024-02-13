@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(4, 142, 155, 0.333);
+}
+
+#game-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+    height: auto;
+    width: 38%;
+    margin: 115px 20px 20px 20px;
+    background-color:rgba(255, 255, 255, 0.564);
+}
+
+
+
+#game-name {
+    font-size: 20px;
+    margin: 45px 70px 20px 70px;
+    display: flex;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Comic Sans MS', cursive; */
+}
+
+#game-response {
+    /* border: 1px solid black; */
+    margin: 0px 70px 30px 70px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#word-name {
+    letter-spacing: 0.5em; 
+    font-size: 25px;
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 70%;
+    align-self: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#guess-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 35px;
+    width: 70%;
+    align-self: center;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#live-guess-letters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 25px;
+    width: 70%;
+    align-self: center;
+    font-size: 22px  ;
+    letter-spacing: 0.5em;
+}
+
+#input-letter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#lable{
+    margin: 20px 0px 10px 0px;
+    align-self: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+#letterinput {
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 255, 0.203);
+    height: 60px;
+    width: 10%;
+    align-self: center;
+    align-content: center;
+    padding-left: 25px;
+    font-size: 30px;
+    outline: blue;
+}
+#guess-button{
+    margin: 20px 0px 20px 0px;
+    align-self: center;
+}
+#btn{
+    height: 35px;
+    width: 70px;
+    border-radius: 20px;
+    /* border: 1px solid rgba(0, 255, 255, 0.361); */
+    border: hidden;
+    background-color: rgba(0, 183, 255, 0.233);
+}
+
+#gameover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    display: none;
+    margin-right: 235px;
+}
+#btn2{
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    border: hidden;
+    font-size: 13px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin-left: 200px;
+}
+#btn3{
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    border: hidden;
+    font-size: 13px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin-left: 150px;
+}
+#catwon{
+    height: 400px;
+    width: 400px;
+    
+}
+#Lost{
+    font-size: 20px;
+    color: rgba(54, 65, 224, 0.543);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin: 10px;
+    margin-left: 150px;
+}
+#gameloose{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    display: none;
+}
+#won{
+    font-size: 20px;
+    color: rgba(54, 65, 224, 0.543);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin: 10px;
+    margin-left: 200px;
+}
+#looser{
+    display: flex;
+    flex-direction: column;
+   
+}
+#cat{
+    height: 400px;
+    width: 400px;
+    
+}
+@media screen and (max-width: 768px) {
+    #game-content {
+      width: 90%;
+      margin: 50px auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    #game-content {
+      width: 95%;
+      margin: 30px auto;
+    }
+    #word-name {
+      font-size: 20px;
+    }
+    #guess-count-value {
+      font-size: 14px;
+    }
+    #live-guess-letters {
+      font-size: 18px;
+    }
+    #letterinput {
+      height: 40px;
+      width: 20%;
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    #word-name {
+      font-size: 18px;
+    }
+    #guess-count-value {
+      font-size: 12px;
+    }
+    #live-guess-letters {
+      font-size: 16px;
+    }
+    #letterinput {
+      height: 35px;
+      width: 25%;
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 280px) {
+    #word-name {
+      font-size: 16px;
+    }
+    #guess-count-value {
+      font-size: 10px;
+    }
+    #live-guess-letters {
+      font-size: 14px;
+    }
+    #letterinput {
+      height: 30px;
+      width: 30%;
+      font-size: 16px;
+    }
+  }

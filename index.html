@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section id="game-content">
+        <div id="game-name">
+            <h1>  Guess the Word Game !!</h1>
+        </div>
+
+        <div id="game-response">
+            <p id="game-response-value">Guess the word :)<strong><b></b></strong></p>
+        </div>
+
+        <div id="word-name">
+
+        </div>
+
+        <div id="guess-count">
+            <p id="guess-count-value">You have Only 10 guesses</p>
+        </div>
+
+        <div id="live-guess-letters">
+
+        </div>
+
+        <div id="input-letter">
+            <label for="letterinput" id="lable">Type one letter:</label>
+            <input type="text" maxlength="1" id="letterinput">
+        </div>
+
+        <div id="guess-button">
+            <button id="btn">Guess!</button>
+        </div>
+
+    </section>
+
+    <section id="display-game-over">
+        <div id="gameover">
+            <img src="catty2.gif" id="catwon" alt="">
+            <p id="won">You Won:)</p>
+            <button id="btn2">Wanna Play Again</button>
+        </div>
+    </section>
+
+    <section id="display-game-loose">
+        <div id="gameloose">
+            <img src="catlose.gif"  id="cat" alt="">
+            <p id="Lost"> <b>You Lost :(</b></p>
+            <button id="btn3">RESTART GAME</button>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
