@@ -12,7 +12,7 @@ const gamecontent = document.getElementById("game-content");
 
 
 
-const words=["block","chair","demon","lover","house","angel","wings","unity","table","joker","zebra","giant","magic","whale","books","lemon","right","wrong"];
+const words = ["block", "chair", "demon", "lover", "house", "angel", "wings", "unity", "table", "joker", "zebra", "giant", "magic", "whale", "lemon", "right", "wrong"];
 
 const randomIndex = Math.floor(Math.random() * words.length);
 let str = words[randomIndex].toUpperCase();
@@ -26,15 +26,26 @@ while (wordindex1 === wordindex2) {
 console.log(wordindex1);
 console.log(wordindex2);
 
-let hiddenWord = '';
-for (let i = 0; i < str.length; i++) {
-    if (i === wordindex1 || i === wordindex2) {
-        hiddenWord += '_';
-    } else {
-        hiddenWord += str[i];
-    }
-}
-wordElement.textContent = hiddenWord;
+let arrayword=[...str];
+let arraywordcopy=[...str];
+
+arrayword.forEach((letter,i)=>{
+   if(letter===str[wordindex1]  || letter===str[wordindex2])
+   {
+    arrayword[i]="_";
+   }
+})
+
+
+// let hiddenWord = '';
+// for (let i = 0; i < str.length; i++) {
+//     if (i === wordindex1 || i === wordindex2) {
+//         hiddenWord += '_';
+//     } else {
+//         hiddenWord += str[i];
+//     }
+// }
+wordElement.textContent = arrayword.join('');
 
 document.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
@@ -55,40 +66,43 @@ guessbtn.addEventListener('click', function () {
 })
 
 var count = 10;
+
 function checkletter(element) {
     guessedwords.innerText += element + " ";
-    let newHiddenWord = '';
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === element) {
-            newHiddenWord += element;
-            // gameresponse.textContent = "Good guess! The Word has letter   " + element + ":)";
-         
-        } else {
-            newHiddenWord += hiddenWord[i];
-            // gameresponse.textContent="Aww!! your " +element+ " guess is wrong :("
-           
+    // let newHiddenWord = '';
+    // for (let i = 0; i < str.length; i++) {
+    //     if (str[i] === element) {
+    //         newHiddenWord += element;
+
+    //     } else {
+    //         newHiddenWord += hiddenWord[i];
+    //     }
+    // }
+
+    arraywordcopy.forEach((letter,index)=>{
+        if(letter===element){
+            arrayword[index]=element;
         }
-    }
-
-
-    if(str[wordindex1]===element || str[wordindex2]===element){
-        gameresponse.textContent = "Good guess! The Word has letter   " + element + " :)";
        
+    });
+
+    if (str[wordindex1] === element || str[wordindex2] === element) {
+        gameresponse.textContent = "Good guess! The Word has letter   " + element + " :)";
+
     }
-    else{
-        gameresponse.textContent="Aww!! your " +element+ " guess is wrong :("
+    else {
+        gameresponse.textContent = "Aww!! your " + element + " guess is wrong :("
     }
 
-
-    hiddenWord = newHiddenWord;
-    wordElement.textContent = hiddenWord;
+    // hiddenWord = newHiddenWord;
+    wordElement.textContent = arrayword.join('');
 
     letterinput.value = "";
     count--;
     guesscount.textContent = "you only have " + count + " guesses left"
     letterinput.focus();
 
-    if (hiddenWord === str) {
+    if (arrayword.join('') === str) {
         gamecontent.style.display = "none";
         gameover.style.display = "inline";
 
@@ -109,3 +123,6 @@ restartbtn.addEventListener("click", () => {
 restartbtn2.addEventListener("click", () => {
     location.reload();
 })
+
+
+
